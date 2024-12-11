@@ -1,0 +1,22 @@
+.Detail{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0 0 0;
+
+  .Detail-div{
+    width: 80%;
+    margin: auto;
+  }
+
+  .Detail-title{
+    padding: 1rem 0;
+  }
+
+  .Detail-subtitle{
+    padding: 1rem 0 0 0;
+  }
+
+  .Detail-span{
+
+  }
+}

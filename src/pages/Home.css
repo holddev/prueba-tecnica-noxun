@@ -1,0 +1,8 @@
+.Home{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0 0 0;
+  .Home-p{
+    color: #a9a7a7e6;
+  }
+}

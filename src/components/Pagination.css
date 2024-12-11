@@ -1,0 +1,31 @@
+.Pagination{
+  padding: 2rem 0;
+
+  .Pagination-ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+    .Pagination-li{
+      list-style-type: none;
+    }
+
+    .Pagination-button{
+      cursor: pointer;
+      width: 2rem;
+      height: 2rem;
+      font-size: 1rem;
+      padding: .2rem;
+      border-radius: 1rem;
+      border: 2px solid #2858f3;
+      background-color: transparent;
+      transition: all .3s ease-in-out;
+    }
+    .Pagination-button.active{
+      background-color: #2858f3;
+    }
+  }
+
+}

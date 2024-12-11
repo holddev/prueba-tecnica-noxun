@@ -1,0 +1,26 @@
+.Posts-article{
+  .Posts-h3{
+    color: #35abcc;
+    padding: 0 0 1rem 0;
+  }
+  .Posts-p{
+    color: #c6c6c6;
+  }
+}
+
+.Detail-article{  
+  background-color: #5452529e;
+  padding: 1rem;
+  border-radius: .5rem;  
+  
+  .Detail-h3{
+    color: #35abcc;
+    padding: 0 0 1rem 0;
+    font-size: 1.2em;
+  }
+  .Detail-p{
+    color: #c6c6c6;
+    font-size: 1.1em;
+  }
+}
+

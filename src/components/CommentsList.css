@@ -1,0 +1,16 @@
+.Detail-ul{
+
+  .Detail-li{
+    padding: 1rem;
+    width: 90%;
+    border-bottom: 2px solid #8d8d8d;
+    .Detail-h4{
+      color: #35abcc;
+      padding: .5rem 0 1rem 0;
+    }
+    .Detail-p{
+      color: #c6c6c6;
+    }
+  }
+
+}
