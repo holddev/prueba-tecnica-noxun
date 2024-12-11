@@ -5,12 +5,11 @@ import { PostsList } from "../components/PostsList"
 import './Home.css'
 import { usePagination } from "../hooks/usePagination"
 import { useFilter } from "../hooks/useFilter"
+import { API_URL } from "../config"
 
 interface Props {
   searchParam: string
 }
-
-const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts'
 
 export const Home: React.FC<Props> = ({ searchParam }) => {
 
@@ -25,7 +24,7 @@ export const Home: React.FC<Props> = ({ searchParam }) => {
 
 
   useEffect(() => {
-    fetch(POSTS_URL)
+    fetch(`${API_URL}/posts`)
       .then(res => res.json())
       .then(data => {
         setPost(() => data)

@@ -4,6 +4,8 @@ import { Comment, Post } from "../types.d"
 import { PostItem } from "../components/PostItem"
 import './DetailPosts.css'
 import { CommentsList } from "../components/CommentsList"
+import { useFilter } from "../hooks/useFilter"
+import { API_URL } from "../config"
 
 interface Props {
   searchParam: string
@@ -15,13 +17,13 @@ export const DetailPost: React.FC<Props> = ({ searchParam }) => {
   const [commentPost, setcommentPost] = useState<Comment[]>([])
   const [post, setPost] = useState<Post>()
   const [isLoading, setIsLoading] = useState(true)
+  const { filteredItems } = useFilter({ searchParam: searchParam, items: commentPost })
 
   useEffect(() => {
-    const GENERAL_URL_API = 'https://jsonplaceholder.typicode.com'
     const fetchData = async () => {
       const responses = await Promise.allSettled([
-        fetch(`${GENERAL_URL_API}/posts/${params.id}`),
-        fetch(`${GENERAL_URL_API}/posts/${params.id}/comments`)
+        fetch(`${API_URL}/posts/${params.id}`),
+        fetch(`${API_URL}/posts/${params.id}/comments`)
       ])
 
       const [res1, res2] = responses;
@@ -46,14 +48,6 @@ export const DetailPost: React.FC<Props> = ({ searchParam }) => {
 
   }, [params.id])
 
-  const filteredComments = commentPost.filter(({ name, body }) => {
-    console.log('name: ', name)
-    console.log('body: ', name)
-    const compare = searchParam.toLowerCase()
-    return name.toLowerCase().includes(compare) || body.toLowerCase().includes(compare)
-  })
-
-
   return (
     <>
       <main className="Detail">
@@ -77,11 +71,11 @@ export const DetailPost: React.FC<Props> = ({ searchParam }) => {
                     )
                   }
                   {
-                    filteredComments.length > 0 ? (
+                    filteredItems.length > 0 ? (
                       <>
                         <h3 className="Detail-subtitle">Comments</h3>
                         <CommentsList
-                          commentsPost={filteredComments}
+                          commentsPost={filteredItems}
                         />
                       </>
                     ) : (
