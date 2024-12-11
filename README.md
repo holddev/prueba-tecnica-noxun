@@ -9,7 +9,7 @@ App de Post es una sitio web que muestra contenido dinámico y filtracián entre
    [Descargar ZIP](https://github.com/holddev/prueba-tecnica-noxun/archive/refs/heads/main.zip)
    
 ```bash
-   git clone https://github.com/holddes/prueba-tecnica-noxun.git
+   git clone https://github.com/holddev/prueba-tecnica-noxun.git
 ```
 
 2. **Cambiar de directorio:**
