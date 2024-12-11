@@ -3,6 +3,7 @@ import { Post } from "../types"
 import { Pagination } from "../components/Pagination"
 import { PostsList } from "../components/PostsList"
 import './Home.css'
+import { usePagination } from "../hooks/usePagination"
 
 interface Props {
   searchParam: string
@@ -13,7 +14,12 @@ const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts'
 export const Home: React.FC<Props> = ({ searchParam }) => {
 
   const [post, setPost] = useState<Post[]>([])
-  const [currentPage, setCurrentPage] = useState<number>(1)
+  const {
+    paginatedItems,
+    currentPage,
+    pageNumbers,
+    onChangePage
+  } = usePagination({ itemsByPage: 10, items: post })
 
   useEffect(() => {
     fetch(POSTS_URL)
@@ -30,24 +36,8 @@ export const Home: React.FC<Props> = ({ searchParam }) => {
     return titleSearch.includes(searchPost) || bodySearch.includes(searchPost)
   })
 
-  //page
-  const postsByPage = 10
-
-  //page
-  const indexLastPost = currentPage * postsByPage
-  const indexFirstPost = indexLastPost - postsByPage
-
-  //page
   const currentPosts = searchParam ?
-    filteredPosts : filteredPosts.slice(indexFirstPost, indexLastPost)
-
-  //page
-  const totalPages = Math.ceil(filteredPosts.length / postsByPage)
-
-  //page
-  const pageNumbers = [...Array(totalPages).keys()].map((x) => x + 1);
-
-  const handleChangePage = (pageSelected: number) => setCurrentPage(pageSelected)
+    filteredPosts : paginatedItems
 
   return (
     <>
@@ -65,7 +55,7 @@ export const Home: React.FC<Props> = ({ searchParam }) => {
             <Pagination
               currentPage={currentPage}
               pageNumbers={pageNumbers}
-              onChangePage={handleChangePage}
+              onChangePage={onChangePage}
             />
           )
 
