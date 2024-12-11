@@ -31,7 +31,8 @@ App de Post es una sitio web que muestra contenido dinámico y filtracián entre
 
 **modo produccion:**
 ```bash
-   pnpm run start
+   pnpm run build
+   pnpm run preview
 ```
 
 ### Tareas Completadas: 
