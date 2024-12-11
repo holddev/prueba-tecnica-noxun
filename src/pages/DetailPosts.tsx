@@ -60,7 +60,7 @@ export const DetailPost: React.FC<Props> = ({ searchParam }) => {
                   {
                     post ? (
                       <>
-                        <h3 className="Detail-title">Post</h3>
+                        <h3 className="Detail-title">Publicación</h3>
                         <PostItem
                           className="Detail"
                           post={post}
@@ -73,7 +73,7 @@ export const DetailPost: React.FC<Props> = ({ searchParam }) => {
                   {
                     filteredItems.length > 0 ? (
                       <>
-                        <h3 className="Detail-subtitle">Comments</h3>
+                        <h3 className="Detail-subtitle">Comentarios</h3>
                         <CommentsList
                           commentsPost={filteredItems}
                         />

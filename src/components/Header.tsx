@@ -14,12 +14,13 @@ export const Header: React.FC<Props> = ({ onHandleChange }) => {
       <h1 className='Header-h1'>App de Posts</h1>
       <form className='Header-form' onSubmit={handleSubmit}>
         <label className='Header-label'>
-          Buscar por titulo o contenido
+          Buscar por título o contenido
           <input
             className='Header-input'
             name='search'
             type="text"
             onChange={onHandleChange}
+            placeholder='¿Quiéres buscar algo?'
           />
         </label>
       </form>

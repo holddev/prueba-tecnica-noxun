@@ -41,7 +41,7 @@ export const Home: React.FC<Props> = ({ searchParam }) => {
               currentPosts={paginatedItems}
             />
           ))
-            : <p className="Home-p">No se encontro ningun recurso</p>
+            : <p className="Home-p">No se encontro ningún recurso.</p>
         }
         {
           (filteredItems.length > 10 && !searchParam) && (
