@@ -23,6 +23,29 @@
       outline: none; 
       border: 1px solid #35abcc;
       padding: .4rem .8rem;
+      &:focus{
+        color: #d1d1d1;
+      }
     }
   }
+}
+
+@media only screen and (max-width:690px){
+  .Header{
+    flex-direction: column;
+    align-items: start;
+    gap: .6rem;
+
+    .Header-h1{
+      text-align: start;
+      font-size: 1.5em;    
+    }
+    .Header-form{
+      width: 100%;
+      .Header-label{
+        gap: .5rem;
+      }
+    }
+  }
+
 }
